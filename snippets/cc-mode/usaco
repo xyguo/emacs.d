@@ -1,0 +1,24 @@
+# -*- mode: snippet -*-
+# name: usaco template
+# key: usaco
+# --
+/*
+  ID:xdgxygp1
+  LANG:C++
+  PROG:${1:name}
+ */
+
+#include <cstdio>
+#define DEBUG
+
+int main(void)
+{
+#ifndef DEBUG
+  freopen("$1.in", "r", stdin);
+  freopen("$1.out", "w", stdout);
+#endif
+
+  $2
+
+  return 0;
+}

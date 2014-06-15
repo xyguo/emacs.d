@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: printf
+# key: prf
+# binding: direct-keybinding
+# --
+printf("${1:%s}\\n"${1:$(if (string-match "%" text) "," "\);")
+}$2${1:$(if (string-match "%" text) "\);" "")}
