@@ -113,6 +113,13 @@
 
 ;; switch-window
 (require 'init-switch-window)
+;; Set "C-x p" to select the previous window
+(defun other-window-backward (&optional n)
+  "Select the Nth previous window"
+  (interactive "P")
+  (other-window (- (prefix-numeric-value n))))
+(global-set-key "\C-xp" 'other-window-backward)
+
 
 ;; undo-tree
 (require 'init-undo-tree)
