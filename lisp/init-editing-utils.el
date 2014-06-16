@@ -25,7 +25,8 @@
  truncate-lines nil
  truncate-partial-width-windows nil
  visible-bell t
- scroll-bar-mode nil)
+ scroll-bar-mode nil
+ tool-bar-mode nil)
 
 ;; auto-revert
 (global-auto-revert-mode)
