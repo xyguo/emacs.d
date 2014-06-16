@@ -24,9 +24,10 @@
  tooltip-delay 1.5
  truncate-lines nil
  truncate-partial-width-windows nil
- visible-bell t
- scroll-bar-mode nil
- tool-bar-mode nil)
+ visible-bell t)
+(set-scroll-bar-mode nil)
+(tool-bar-mode 0)
+
 
 ;; auto-revert
 (global-auto-revert-mode)
