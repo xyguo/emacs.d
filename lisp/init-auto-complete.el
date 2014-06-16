@@ -19,6 +19,7 @@
 
 
 ;; use pos-tip instead of popup
+(require-package 'pos-tip)
 (require 'pos-tip)
 (setq ac-quick-help-prefer-pos-tip t)
 ;; use quick-help to show the documents
