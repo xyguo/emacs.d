@@ -19,6 +19,9 @@
  mouse-yank-at-point t
  save-interprogram-paste-before-kill t
  scroll-preserve-screen-position 'always
+ scroll-step 1
+ scroll-margin 3
+ scroll-conservatively 10000
  set-mark-command-repeat-pop t
  show-trailing-whitespace t
  tooltip-delay 1.5
