@@ -11,7 +11,6 @@
 (require 'package)
 
 
-
 ;;; Standard package repositories
 
 ;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -61,7 +60,18 @@ re-downloaded in order to locate PACKAGE."
 
 (package-initialize)
 
-
+;; The cl-lib is distributed with Emacs >= 24.3 and is required by many packages.
+;; For Emacs version < 24.3, it can be installed via ELPA. But you'd better move
+;; the cl-lib.el to PATH/TO/EMACS/lisp/emacs-lisp, otherwise it may break future
+;; updating of Emacs.
+(unless (package-installed-p 'cl-lib)
+  (when (yes-or-no-p "Cannot find cl-lib. Maybe your Emacs is too old,
+you'd better update it to >= 24.3. Install the cl-lib now?")
+    (require-package 'cl-lib)
+    (require 'cl-lib)
+    (message "The cl-lib has been automatically installed,
+but you'd better update to Emacs >= 24.3.
+Or, move the cl-lib.el to 'EMACS-INSTALLATION-PATH/lisp/emacs-lisp'")))
 
 ;; (require-package 'fullframe)
 ;; (fullframe list-packages quit-window)
