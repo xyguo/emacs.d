@@ -131,4 +131,7 @@
 ;; use C-u C-u C-s/r to trigger the flexible search action
 (require 'init-flex-isearch)
 
+;; set some compilation shortcuts
+(require 'init-compile)
+
 (provide 'init-editing-utils)
