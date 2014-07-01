@@ -1,0 +1,34 @@
+# -*- mode: snippet -*-
+# name: usaco template
+# key: usaco
+# --
+/*
+  ID:xdgxygp1
+  LANG:C++11
+  PROG:${1:name}
+ */
+
+#include <iostream>
+#include <fstream>
+#define DEBUG
+#ifndef DEBUG
+#include <stdexcept>
+#endif
+
+int main(void)
+{
+  std::ios::sync_with_stdio(false);
+#ifndef DEBUG
+  std::ifstream input("$1.in");
+  std::ofstream output("$1.out");
+  if (!input.is_open() || !output.is_open())
+    throw std::runtime_error("cannot open input/output file");
+#else
+  auto &input = std::cin;
+  auto &output = std::cout;
+#endif
+
+  $2
+
+  return 0;
+}

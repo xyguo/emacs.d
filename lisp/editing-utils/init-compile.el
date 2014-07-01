@@ -3,7 +3,7 @@
 ;; the compilation commands alist : (FILETYPE COMMAND-LIST)
 (setq my-compilation-commands
       '((("c") . ("clang -Wall" "gcc -Wall"))
-        (("cpp" "c++" "CPP" "C") . ("clang++ -Wall" "g++ -Wall"))))
+        (("cpp" "c++" "CPP" "C" "cc") . ("clang++ -Wall -std=c++11" "g++ -Wall -std=c++11"))))
 
 ;; get the right command according to the file type
 (defun get-compile-cmd ()
