@@ -14,9 +14,10 @@
 (require-package 'auto-complete-clang)
 (require 'auto-complete-clang)
 (setq ac-clang-flags
-      (mapcar (lambda (item) (concat "-I" item))
-              (split-string
-               "
+      (append '("-std=c++11")
+              (mapcar (lambda (item) (concat "-I" item))
+                      (split-string
+                       "
  /usr/include/c++/4.8
  /usr/include/x86_64-linux-gnu/c++/4.8
  /usr/include/c++/4.8/backward
@@ -26,7 +27,7 @@
  /usr/include/x86_64-linux-gnu
  /usr/include
 "
-               )))
+                       ))))
 (defun my-ac-cc-mode-setup ()
   (setq ac-sources (append '(ac-source-clang) ac-sources)))
 (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
