@@ -87,4 +87,8 @@
 ;; use org-toc
 (add-hook 'org-mode-hook 'org-toc-enable)
 
+;; enable markdown-exporting to the export menu
+(eval-after-load "org"
+  '(require 'ox-md nil t))
+
 (provide 'init-org)
