@@ -7,11 +7,13 @@ This config now supports for the following:
 * C/C++
 * Matlab
 * Markdown/LaTeX
+* Haskell
 
 ## Requirements
 * Emacs 24.3.1 or greater
 * clang 3.2-10 or greater
 * git
+* ghci 7.6.1 or greater
 
 ## Installation
 To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
