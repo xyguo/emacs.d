@@ -4,3 +4,4 @@ session.*
 elpa/
 auto-save-list/
 eshell/
+srecode-map.el

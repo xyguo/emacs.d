@@ -1,6 +1,6 @@
 (require-package 'org-fstree)
 (require-package 'org-magit)
-(require-package 'org-toc)
+(require-package 'toc-org)
 
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -85,7 +85,7 @@
      (sh . t))))
 
 ;; use org-toc
-(add-hook 'org-mode-hook 'org-toc-enable)
+(add-hook 'org-mode-hook 'toc-org-enable)
 
 ;; enable markdown-exporting to the export menu
 (eval-after-load "org"
