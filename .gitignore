@@ -1,6 +1,7 @@
 *.o
 *.dat
 session.*
+*~
 elpa/
 auto-save-list/
 eshell/
