@@ -1,8 +1,11 @@
 *.o
 *.dat
-session.*
 *~
 elpa/
 auto-save-list/
 eshell/
+
+# ignore auto-generated file
 srecode-map.el
+.mc-lists.el
+session.*
