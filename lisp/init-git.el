@@ -1,3 +1,3 @@
 (require-package 'magit)
-(require 'magit-autoloads)
+;;(require 'magit-autoloads)
 (provide 'init-git)

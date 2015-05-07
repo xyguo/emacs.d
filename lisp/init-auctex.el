@@ -1,7 +1,7 @@
 ;; (load "auctex.el" nil t t)
 ;; (load "preview-latex.el" nil t t)
 (require-package 'auctex)
-(require 'auctex-autoloads)
+;; (require 'auctex-autoloads)
 (mapc (lambda (mode)
       (add-hook 'LaTeX-mode-hook mode))
       (list ;; 'auto-fill-mode

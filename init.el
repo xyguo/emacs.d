@@ -8,13 +8,19 @@
 ;;----------------------------------------------------------------------------
 ;; (require 'init-compat)
 (require 'init-utils)
-;; (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
-(require 'init-elpa) ;; Machinery for installing required packages
+
+;; Needed for Emacs version < 24. must come before elpa, as it may provide package.el
+;; (require 'init-site-lisp)
+
+;; Machinery for installing required packages.
+;; explicitly call 'package-initialize to set up all packages installed via ELPA.
+;; should come before all package-related config files
+(require 'init-elpa)
 ;; (require 'init-exec-path) ;; Set up $PATH
 
-;; ;;----------------------------------------------------------------------------
-;; ;; Load configs for specific features and modes
-;; ;;----------------------------------------------------------------------------
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
 
 ;; (require-package 'wgrep)
 ;; (require-package 'project-local-variables)
@@ -126,9 +132,9 @@
 ;; (require 'init-locales)
 
 ;; (add-hook 'after-init-hook
-;;           (lambda ()
-;;             (message "init completed in %.2fms"
-;;                      (sanityinc/time-subtract-millis after-init-time before-init-time))))
+;;            (lambda ()
+;;              (message "init completed in %.2fms"
+;;                       (sanityinc/time-subtract-millis after-init-time before-init-time))))
 
 
 (provide 'init)
