@@ -68,7 +68,7 @@ locate PACKAGE."
      nil)))
 
 ;;; Fire up package.el
-
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 ;; The cl-lib is distributed with Emacs >= 24.3 and is required by many packages.
