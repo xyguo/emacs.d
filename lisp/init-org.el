@@ -64,13 +64,6 @@
      (define-key org-clock-mode-line-map [header-line mouse-2] 'org-clock-goto)
      (define-key org-clock-mode-line-map [header-line mouse-1] 'org-clock-menu)))
 
-(eval-after-load 'org
-  '(progn
-     (require 'org-exp)
-     (require 'org-clock)
-     ;;(require 'org-checklist)
-     (require 'org-fstree)))
-
 (after-load 'org
   (org-babel-do-load-languages
    'org-babel-load-languages
