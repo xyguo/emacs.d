@@ -5,7 +5,7 @@
 
 ;; some default value
 (setq-default
- blink-cursor-delay 0
+ blink-cursor-delay 0.5
  blink-cursor-interval 0.4
  buffers-menu-max-size 20
  case-fold-search t
