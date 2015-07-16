@@ -30,7 +30,6 @@
 
 ;; (require 'init-frame-hooks)
 ;; (require 'init-xterm)
-(require 'init-themes)
 ;; (require 'init-osx-keys)
 ;; (require 'init-gui-frames)
 ;; (require 'init-proxies)
@@ -103,6 +102,7 @@
 ;;   (require-package 'osx-location))
 ;; (require-package 'regex-tool)
 
+(require 'init-themes)
 ;; ;;----------------------------------------------------------------------------
 ;; ;; Allow access from emacsclient
 ;; ;;----------------------------------------------------------------------------
