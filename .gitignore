@@ -10,3 +10,6 @@ srecode-map.el
 .mc-lists.el
 session.*
 \#*
+ido.last
+smex-items
+recentf

@@ -51,6 +51,7 @@
 ;; (require 'init-mmm)
 (require 'init-tabbar)
 (require 'init-editing-utils)
+(require 'init-evil)
 (require 'init-matlab)
 
 ;; (require 'init-vc)
