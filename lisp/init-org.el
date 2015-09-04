@@ -1,5 +1,5 @@
 (require-package 'org-fstree)
-(require-package 'org-magit)
+(require-package 'orgit)
 (require-package 'toc-org)
 
 (define-key global-map "\C-cl" 'org-store-link)
