@@ -10,10 +10,10 @@ This config now supports for the following:
 * Haskell
 
 ## Requirements
-* Emacs 24.3.1 or greater
+* Emacs 24.4.1 or greater
 * clang 3.2-10 or greater
 * git
-* ghci 7.6.1 or greater
+* ghci 7.10.1 or greater
 
 ## Installation
 To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
