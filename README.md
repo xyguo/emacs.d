@@ -45,16 +45,17 @@ Errors of this type are mostly caused by obsolete package or outdated Emacs vers
 such errors, first check that your Emacs' version has satisfied the requirement listed above in section 
 "Requirements", if so, do the following:
 
-1. Execute Emacs with the `--debug-init` option, i.e.
+##### Execute Emacs with the `--debug-init` option, i.e.
 ```
 $ emacs --debug-init
 ```
-2. Read the debugging info, it usually begins with something like
+
+##### Read the debugging info, it usually begins with something like
 
 > Debugger entered--Lisp error: (void-function XXX)
   ... (the unfoldded calling stack)
 
-3. Now you have some choices:
+##### Now you have some choices:
   * [File an issue](https://github.com/xyguo/emacs.d/issues) and I'll help you deal with that.
   * (A quick-and-dirty way, not recommended) Most times you can just comment out the corresponding line (which can be found through the debugging info) in the `init.el` file to bypass the initialization step that triggers the problem. 
   * Sometimes, a package maintainer decides to change the package's name, which results in a "package not available" error. You can simply Google for the unavailable package's name and if lucky you'll find its new name. After that, [file an issue](https://github.com/xyguo/emacs.d/issues) and I'll be glad to fix the init files.
