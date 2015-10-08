@@ -10,10 +10,15 @@ This config now supports for the following:
 * Haskell
 
 ## Requirements
+These are requirements that **must** be met:
+
 * Emacs 24.4.1 or greater
-* clang 3.2-10 or greater
-* git
-* ghci 7.10.1 or greater
+* git 1.9.4 or greater
+
+and these are not necessary if you don't use that language
+
+* clang 3.2-10 or greater (for C/C++, necessary for `auto-complete-clang`)
+* ghci 7.10.1 or greater (for Haskell)
 
 ## Installation
 To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
@@ -34,6 +39,25 @@ the third-party packages regularly too:
 <kbd>M-x package-list-packages</kbd>, then <kbd>U</kbd> followed by <kbd>x</kbd>.
 
 ## Troubleshooting
+
+### "Symbol's function definition is void: XXX" or "Package XXX is not available for installation"
+Errors of this type are mostly caused by obsolete package or outdated Emacs version. Thus, when you encounter
+such errors, first check that your Emacs' version has satisfied the requirement listed above in section 
+"Requirements", if so, do the following:
+
+1. Execute Emacs with the `--debug-init` option, i.e.
+```
+$ emacs --debug-init
+```
+2. Read the debugging info, it usually begins with something like
+
+> Debugger entered--Lisp error: (void-function XXX)
+  ... (the unfoldded calling stack)
+
+3. Now you have some choices:
+  * [File an issue](https://github.com/xyguo/emacs.d/issues) and I'll help you deal with that.
+  * (A quick-and-dirty way, not recommended) Most times you can just comment out the corresponding line (which can be found through the debugging info) in the `init.el` file to bypass the initialization step that triggers the problem. 
+  * Sometimes, a package maintainer decides to change the package's name, which results in a "package not available" error. You can simply Google for the unavailable package's name and if lucky you'll find its new name. After that, [file an issue](https://github.com/xyguo/emacs.d/issues) and I'll be glad to fix the init files.
 
 ### auto-complete-clang
 Note that the `ac-clang-flags` set in `init-ac-source.el` is platform-dependent. It's actually clang's include file search path. According to the [Troubleshooting section of auto-complete-clang](https://github.com/brianjcj/auto-complete-clang), you can use the following method to find the correct path:
@@ -60,6 +84,10 @@ End of search list.
 Just use them to replace the corresponding string.
 
 ## Support/issues
-If you hit any problems, please first ensure that you are using the latest version of this code, and that you have updated your packages to the most recent available versions (see "Updates" above). If you still experience problems, go ahead and [file an issue on the github project](https://github.com/xyguo/emacs.d/issues).
+If you hit any problems, please 
+
+1. Check that whether you have met system requirements listed in section "Requirements".
+2. Ensure that you are using the latest version of this code, and that you have updated your packages to the most recent available versions (see "Updates" above). 
+3. If you still experience problems, go ahead and [file an issue](https://github.com/xyguo/emacs.d/issues).  
 
 -Xiang-Yu Guo
