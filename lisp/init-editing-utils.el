@@ -1,4 +1,7 @@
 (add-to-list 'load-path (expand-file-name "lisp/editing-utils" user-emacs-directory))
+;; enhanced help mechanism
+(require-package 'help-fns+)
+(require 'help-fns+)
 
 ;; dimish minor mode name to save mode line space
 (require-package 'diminish)
