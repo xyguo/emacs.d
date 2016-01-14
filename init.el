@@ -1,7 +1,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
-;; (defconst *is-a-mac* (eq system-type 'darwin))
+(defconst *is-a-mac* (eq system-type 'darwin))
 
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
@@ -16,7 +16,7 @@
 ;; explicitly call 'package-initialize to set up all packages installed via ELPA.
 ;; should come before all package-related config files
 (require 'init-elpa)
-;; (require 'init-exec-path) ;; Set up $PATH
+(require 'init-exec-path) ;; Set up $PATH
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
@@ -151,7 +151,7 @@
  '(custom-enabled-themes (quote (atom-dark)))
  '(custom-safe-themes
    (quote
-    ("90d329edc17c6f4e43dbc67709067ccd6c0a3caa355f305de2041755986548f2" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
+    ("a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" "3ed645b3c08080a43a2a15e5768b893c27f6a02ca3282576e3bc09f3d9fa3aaa" "90d329edc17c6f4e43dbc67709067ccd6c0a3caa355f305de2041755986548f2" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
  '(fci-rule-color "#073642")
  '(vc-annotate-background nil)
  '(vc-annotate-color-map

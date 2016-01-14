@@ -137,4 +137,15 @@
 ;; set some compilation shortcuts
 (require 'init-compile)
 
+;; spell checking
+(when (executable-find "hunspell")
+  (setq-default ispell-program-name "hunspell")
+  (setq ispell-really-hunspell t)
+  (require 'init-flyspell))
+;; (when (executable-find "aspell")
+;;   (setq-default ispell-program-name "aspell")
+;;   (setq ispell-really-aspell t)
+;;   (require 'init-flyspell))
+
+
 (provide 'init-editing-utils)
