@@ -16,3 +16,4 @@ recentf
 
 # ignore custom settings
 lisp/init-local.el
+custom.el
