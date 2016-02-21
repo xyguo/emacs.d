@@ -16,6 +16,16 @@
   (eval-after-load "flyspell"
     '(progn
        (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
-       (define-key flyspell-mouse-map [mouse-3] #'undefined))))
+       (define-key flyspell-mouse-map [mouse-3] #'undefined)
+       (global-set-key (kbd "<f9>") 'ispell-word)
+       (global-set-key (kbd "C-S-<f9>") 'flyspell-mode)
+       (global-set-key (kbd "C-M-<f9>") 'flyspell-buffer)
+       (global-set-key (kbd "C-<f9>") 'flyspell-check-previous-highlighted-word)
+       (defun flyspell-check-next-highlighted-word ()
+         "Custom function to spell check next highlighted word"
+         (interactive)
+         (flyspell-goto-next-error)
+         (ispell-word))
+       (global-set-key (kbd "M-<f9>") 'flyspell-check-next-highlighted-word))))
 
 (provide 'init-flyspell)
