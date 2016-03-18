@@ -16,6 +16,8 @@
 ;; Security configuration.
 ;; This is commented out by default, but for security considerations
 ;; I strongly recommend you to uncomment it.
+;; You may need `gnutls' library and the `certifi' python package to enable this.
+;; see the comment in `init-security.el'
 ;; (require 'init-security)
 
 ;; Machinery for installing required packages.

@@ -1,5 +1,6 @@
 
 ;; Security configurations
+;; To use TLS connection support you need `Gnutls' library
 ;; The function `setup-tls-programs' should be invoked before installing
 ;; any packages from remote repositories. Here I use the `certifi' python module
 ;; to retrieve valid certificates. 
@@ -26,6 +27,7 @@
                    (if (eq window-system 'w32) ".exe" "") trustfile)))
     (setq gnutls-verify-error t)
     (setq gnutls-trustfiles (list trustfile))))
+
 (setup-tls-programs)
 
 ;; (after-load 'init-exec-path
