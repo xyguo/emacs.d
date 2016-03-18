@@ -20,6 +20,17 @@ and these are not necessary if you don't use that language
 * clang 3.2-10 or greater (for C/C++, necessary for `auto-complete-clang`)
 * ghci 7.10.1 or greater (for Haskell)
 
+### Enable TLS for securely connecting to ELPA
+ELPA is accessed over HTTP by default, which may result in security problems, so I prefer to use HTTPS instead. This can be done simply by replace the "http" in ELPA repository addresses with "https", and turn on the TLS checking.
+
+By default, both HTTPS and TLS checking are **disabled**. If you do like to turn them on (and I recommend you to), then the following requirements must be met:
+
+* remove the comment before `(require 'init-security)` line in `init.el`
+* gnutls 3.4 or greater
+* The `certifi` package from pypi (`pip install certifi`)
+
+More detailed description can be found in [this article](https://glyph.twistedmatrix.com/2015/11/editor-malware.html).
+
 ## Installation
 To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
 `init.el` contained in this repo ends up at `~/.emacs.d/init.el`:
