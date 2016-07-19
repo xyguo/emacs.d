@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: usaco template
-# key: usaco
+# name: usaco template for C++11
+# key: usaco11
 # --
 /*
   ID:xdgxygp1
