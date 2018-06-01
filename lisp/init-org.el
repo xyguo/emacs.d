@@ -75,7 +75,7 @@
      (octave . t)
      (python . t)
      (ruby . t)
-     (sh . t))))
+     (shell . t))))
 
 ;; use org-toc
 (add-hook 'org-mode-hook 'toc-org-enable)
