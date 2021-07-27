@@ -1,7 +1,8 @@
 (add-to-list 'load-path (expand-file-name "lisp/editing-utils" user-emacs-directory))
 ;; enhanced help mechanism
-(require-package 'help-fns+)
-(require 'help-fns+)
+;; DEPRECATED: this package has been removed by MELPA
+;; (require-package 'help-fns+)
+;; (require 'help-fns+)
 
 ;; dimish minor mode name to save mode line space
 (require-package 'diminish)
@@ -41,8 +42,11 @@
       auto-revert-verbose t)
 
 ;; enable auto-pairing
-(require 'init-autopair)
-(diminish 'autopair-mode)
+;; DEPRECATED: removed by MELPA
+;; (require 'init-autopair)
+;; (diminish 'autopair-mode)
+;; Replace autopair with Emacs' own pairing mode
+(electric-pair-mode)
 
 ;; some personal key bindings
 (global-set-key (kbd "C-c r") 'replace-string)
@@ -86,7 +90,7 @@
 
 ;; whole-line-or-region-mode
 (require-package 'whole-line-or-region)
-(whole-line-or-region-mode t)
+(whole-line-or-region-global-mode t)
 (diminish 'whole-line-or-region-mode)
 (make-variable-buffer-local 'whole-line-or-region-mode)
 

@@ -41,7 +41,7 @@
 ;; (require 'init-osx-keys)
 ;; (require 'init-gui-frames)
 ;; (require 'init-proxies)
-(require 'init-dired)
+;; (require 'init-dired) ;; This package has been removed from melpa
 ;; (require 'init-isearch)
 ;; (require 'init-uniquify)
 ;; (require 'init-ibuffer)
@@ -54,7 +54,7 @@
 (require 'init-auto-complete)
 ;; (require 'init-windows)
 ;; (require 'init-sessions)
-(require 'init-fonts)
+;; (require 'init-fonts)
 ;; (require 'init-mmm)
 (require 'init-tabbar)
 (require 'init-editing-utils)

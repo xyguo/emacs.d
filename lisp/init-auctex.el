@@ -10,7 +10,7 @@
             'TeX-fold-mode
             'linum-mode
             'auto-complete-mode
-            'autopair-mode
+            ;; 'autopair-mode
             'outline-minor-mode))
 
 (add-hook 'LaTeX-mode-hook
