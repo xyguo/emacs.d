@@ -8,7 +8,7 @@
             'LaTeX-math-mode
             'turn-on-reftex
             'TeX-fold-mode
-            'linum-mode
+            'display-line-numbers-mode
             'auto-complete-mode
             ;; 'autopair-mode
             'outline-minor-mode))

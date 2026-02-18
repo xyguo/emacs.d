@@ -4,6 +4,8 @@
 elpa/
 auto-save-list/
 eshell/
+.cache/
+transient/
 
 # ignore auto-generated file
 srecode-map.el

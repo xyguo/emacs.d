@@ -1,6 +1,7 @@
 (require-package 'color-theme)
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
+(require-package 'doom-themes)
 
 ;; custom theme packages
 ;; can be removed
@@ -13,7 +14,7 @@
 (require-package 'atom-dark-theme)
 
 ;; if you don't customize it, this is the theme you get
-(setq-default custom-enabled-themes '(sanityinc-solarized-dark))
+(setq-default custom-enabled-themes '(doom-one))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()

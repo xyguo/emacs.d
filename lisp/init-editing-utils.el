@@ -69,11 +69,7 @@
 (setq display-time-24hr-format t)
 
 ;; display line number
-;; (require 'linum)
-(require-package 'hlinum)
-;; (require 'hlinum)
-(hlinum-activate)
-(global-linum-mode t)
+(global-display-line-numbers-mode t)
 
 ;; visual line
 (global-visual-line-mode t)
