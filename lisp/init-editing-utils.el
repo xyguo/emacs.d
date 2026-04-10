@@ -147,5 +147,9 @@
   (setq ispell-really-aspell t)
   (require 'init-flyspell))
 
+;; enable which-key: included in Emacs >= 30
+(require 'which-key)
+(which-key-mode 1)
+(which-key-setup-side-window-right-bottom)
 
 (provide 'init-editing-utils)
