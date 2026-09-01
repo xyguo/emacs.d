@@ -125,6 +125,20 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+;; Visit symlinked files via their true path and normalize Org file lists.
+(setq find-file-visit-truename t)
+
+(defun xyguo/canonicalize-path (path)
+  "Return PATH with symlinks resolved when possible."
+  (let ((expanded (expand-file-name path)))
+    (condition-case nil
+        (file-truename expanded)
+      (file-error expanded))))
+
+(with-eval-after-load 'org
+  (setq org-agenda-files
+        (mapcar #'xyguo/canonicalize-path org-agenda-files)))
+
 
 ;;----------------------------------------------------------------------------
 ;; Allow users to provide an optional "init-local" containing personal settings

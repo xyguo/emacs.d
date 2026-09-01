@@ -2,6 +2,9 @@
 (require-package 'fuzzy)
 (require-package 'popup)
 (require-package 'auto-complete)
+;; `auto-complete-config' uses EIEIO's `slot-value'.  Load EIEIO explicitly so
+;; Emacs 31's native compiler sees the definition as well as the runtime does.
+(require 'eieio)
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (add-to-list 'ac-dictionary-directories

@@ -5,6 +5,7 @@ elpa/
 auto-save-list/
 eshell/
 .cache/
+eln-cache/
 transient/
 
 # ignore auto-generated file

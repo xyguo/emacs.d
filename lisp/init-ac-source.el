@@ -10,26 +10,20 @@
 (add-hook 'latex-mode-hook 'ac-latex-mode-setup)
 (add-hook 'LaTeX-mode-hook 'ac-latex-mode-setup)
 
-;; add ac-source for clang
-(require-package 'auto-complete-clang)
-(require 'auto-complete-clang)
-(setq ac-clang-flags
-      (append '("-std=c++11")
-              (mapcar (lambda (item) (concat "-I" item))
-                      (split-string
-                       "
- /usr/include/c++/4.8
- /usr/include/x86_64-linux-gnu/c++/4.8
- /usr/include/c++/4.8/backward
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include
- /usr/local/include
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
- /usr/include/x86_64-linux-gnu
- /usr/include
-"
-                       ))))
-(defun my-ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-clang) ac-sources)))
-(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+;; Use Emacs 31's built-in completion UI and Eglot/clangd for C-family modes.
+;; `auto-complete-clang' has not been maintained since 2014 and still calls the
+;; obsolete pre-0.8 Yasnippet API.
+(require 'completion-preview)
+(require 'eglot)
+
+(defun xyguo/c-family-completion-setup ()
+  "Use clangd-backed completion in the current C-family buffer."
+  (auto-complete-mode -1)
+  (completion-preview-mode 1)
+  (eglot-ensure))
+
+(dolist (hook '(c-mode-hook c++-mode-hook objc-mode-hook
+                c-ts-mode-hook c++-ts-mode-hook))
+  (add-hook hook #'xyguo/c-family-completion-setup))
 
 (provide 'init-ac-source)

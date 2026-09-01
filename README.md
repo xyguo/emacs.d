@@ -17,7 +17,7 @@ These are requirements that **must** be met:
 
 and these are not necessary if you don't use that language
 
-* clang 3.2-10 or greater (for C/C++, necessary for `auto-complete-clang`)
+* `clangd` (for C/C++ completion through built-in Eglot)
 * ghci 7.10.1 or greater (for Haskell)
 
 ### Enable TLS for securely connecting to ELPA
@@ -71,29 +71,12 @@ $ emacs --debug-init
   * (A quick-and-dirty way, not recommended) Most times you can just comment out the corresponding line (which can be found through the debugging info) in the `init.el` file to bypass the initialization step that triggers the problem. 
   * Sometimes, a package maintainer decides to change the package's name, which results in a "package not available" error. You can simply Google for the unavailable package's name and if lucky you'll find its new name. After that, [file an issue](https://github.com/xyguo/emacs.d/issues) and I'll be glad to fix the init files.
 
-### auto-complete-clang
-Note that the `ac-clang-flags` set in `init-ac-source.el` is platform-dependent. It's actually clang's include file search path. According to the [Troubleshooting section of auto-complete-clang](https://github.com/brianjcj/auto-complete-clang), you can use the following method to find the correct path:
+### C and C++ completion
 
-```
-echo "" | g++ -v -x c++ -E -
-```
-
-and you'll get something like this:
-
-```
-#include "..." search starts here：
-#include <...> search starts here：
- /usr/include/c++/4.8
- /usr/include/x86_64-linux-gnu/c++/4.8
- /usr/include/c++/4.8/backward
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include
- /usr/local/include
- /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
- /usr/include/x86_64-linux-gnu
- /usr/include
-End of search list.
-```
-Just use them to replace the corresponding string.
+C-family buffers use Emacs's built-in Eglot client, `clangd`, and completion
+preview.  Install `clangd` and make sure it is available on `exec-path`.
+Project-specific compiler flags belong in `compile_commands.json` or
+`compile_flags.txt`, which `clangd` discovers automatically.
 
 ## Support/issues
 If you hit any problems, please 
